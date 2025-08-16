@@ -1,0 +1,117 @@
+# config file for srealmoreno/label-sync-action
+# Default labels:
+- name: bug
+  description: Something isn't working
+  color: "d73a4a"
+
+- name: documentation
+  description: Improvements or additions to documentation
+  color: "0075ca"
+
+- name: duplicate
+  description: This issue or pull request already exists
+  color: "cfd3d7"
+
+- name: enhancement
+  description: New feature or request
+  color: "a2eeef"
+
+- name: good first issue
+  description: Good for newcomers
+  color: "7057ff"
+
+- name: help wanted
+  description: Extra attention is needed
+  color: "008672"
+
+- name: invalid
+  description: This doesn't seem right
+  color: "e4e669"
+
+- name: question
+  description: Further information is requested
+  color: "cc317c"
+
+#- name: research
+#  description: ""
+#  color: "ed8661"
+
+#- name: security
+#  description: Issues that have security implications
+#  color: "ff0000"
+
+- name: wontfix
+  description: This will not be worked on
+  color: "ffffff"
+
+
+# Additional labels for PRs / release-drafter:
+- name: breaking
+  description: Pull requests that break existing features
+  color: "e4e669"
+
+- name: build
+  description: Pull requests that change the build process
+  color: "912e29"
+
+- name: dependencies
+  description: Pull requests that update a dependency file
+  color: "0366d6"
+
+- name: deprecated
+  description: Pull requests that deprecate features
+  color: "c70132"
+
+- name: developer
+  description: Pull requests that contain changes for developers
+  color: "f3d4e9"
+
+- name: github_actions
+  description: Pull requests that update GitHub Actions code
+  color: "000000"
+
+- name: java
+  description: Pull requests that update Java code
+  color: "ffa221"
+
+- name: maintenance
+  description: Pull that contains changes for maintenance
+  color: "912e29"
+
+- name: removed
+  description: Pull requests that remove features
+  color: "bc7855"
+
+- name: skip-changelog
+  description: Skip this PR from automatically changelog generation
+  color: "e4e669"
+
+- name: tests
+  description: Pull requests that update integration tests 
+  color: "87c811"
+
+- name: waiting-for-feedback
+  description: Waiting for 90 days until issues or pull request will be closed
+  color: "ffffff"
+
+
+# Priority labels
+- name: "priority:blocker"
+  description: Blocks development and/or testing work, production could not run
+  color: "cc0000"
+
+- name: "priority:critical"
+  description: Crashes, loss of data, severe memory leak
+  color: "ff0000"
+
+- name: "priority:major"
+  description: Major loss of function
+  color: "009900"
+
+- name: "priority:minor"
+  description: Minor loss of function, or other problem where easy workaround is present
+  color: "006600"
+
+- name: "priority:trivial"
+  description: Cosmetic problem like misspelled words or misaligned text
+  color: "003300"

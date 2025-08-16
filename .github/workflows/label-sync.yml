@@ -1,0 +1,29 @@
+name: ♻️ Sync Labels
+
+on:
+  workflow_dispatch:
+
+jobs:
+  labels:
+    name: ♻️ Sync labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v4
+
+      - name: 🚀 Run Label Sync
+        uses: GHCICD/label-sync-action@vHEAD
+        with:
+          token: ${{ secrets.SERVICE_USER_PAT }}
+          repositories: |
+            mavenplugins/central-publishing-maven-plugin
+
+          # Optional:
+          config-file: |
+            .github/labels.yml
+          #.github/labels-2.yml
+          #https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
+
+          # Optional:
+          # Clean other labels not defined in the config file(s)
+          clean-labels: false
