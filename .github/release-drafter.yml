@@ -64,6 +64,11 @@ categories:
       - build
       - github_actions
 
+  - title: 🛡️ Security
+    labels:
+      - security
+      - vulnerability
+
   - title: 🚦 Tests
     labels: 
       - test

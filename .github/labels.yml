@@ -36,9 +36,9 @@
 #  description: ""
 #  color: "ed8661"
 
-#- name: security
-#  description: Issues that have security implications
-#  color: "ff0000"
+- name: security
+  color: "fbca04"
+  description: Addressing a vulnerability or security risk in this project
 
 - name: wontfix
   description: This will not be worked on
