@@ -16,7 +16,24 @@ jobs:
         with:
           token: ${{ secrets.SERVICE_USER_PAT }}
           repositories: |
+            mavenplugins/.github
+            mavenplugins/artifact-spy-plugin
+            mavenplugins/base-maven-plugins
             mavenplugins/central-publishing-maven-plugin
+            mavenplugins/maven-cdi-plugin-hooks
+            mavenplugins/maven-cdi-plugin-utils
+            mavenplugins/multi-deployment-maven-plugin
+            mavenplugins/org-parent
+            mavenplugins/org-parent-test
+            mavenplugins/parent-base-maven-plugins
+            mavenplugins/parent-maven-plugins
+            mavenplugins/p2site-maven-plugin
+            mavenplugins/reusable-gh-actions
+            mavenplugins/unleash-maven-plugin
+            mavenplugins/unleash-scm-provider-git
+            mavenplugins/unleash-scm-provider-svn
+            mavenplugins/unleash-test-sandbox
+            mavenplugins/unsigner-maven-plugin
 
           # Optional:
           config-file: |
