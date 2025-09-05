@@ -3,6 +3,11 @@ name: ♻️ Sync Labels
 on:
   workflow_dispatch:
 
+# Default permissions
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   labels:
     name: ♻️ Sync labels
