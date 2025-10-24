@@ -100,7 +100,7 @@ template: |
 
   $CHANGES
 
-  # ❤️ Thanks
+  ## ❤️ Thanks
   Many thanks for collaboration on this release for: $CONTRIBUTORS
 
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
