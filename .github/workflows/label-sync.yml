@@ -39,6 +39,7 @@ jobs:
             mavenplugins/unleash-scm-provider-svn
             mavenplugins/unleash-test-sandbox
             mavenplugins/unsigner-maven-plugin
+            mavenplugins/gradle-maven-settings-plugin
 
           # Optional:
           config-file: |
