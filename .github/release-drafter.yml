@@ -3,9 +3,9 @@
 #
 # Configuration for Release Drafter: https://github.com/toolmantim/release-drafter
 
-name-template: v$RESOLVED_VERSION
-tag-template: v$RESOLVED_VERSION
-version-template: $COMPLETE
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+#version-template: '$MAJOR.$MINOR.$PATCH$PRERELEASE'
 
 filter-by-commitish: true
 
