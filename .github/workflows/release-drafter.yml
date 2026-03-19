@@ -54,13 +54,20 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: 'false'
 
       - id: has-pom
         run: |
           if [ -f pom.xml ]; then
+            echo "status=true" >> $GITHUB_OUTPUT
+          fi
+          cat $GITHUB_OUTPUT
+
+      - id: is-gradle
+        run: |
+          if [ -f build.gradle ]; then
             echo "status=true" >> $GITHUB_OUTPUT
           fi
           cat $GITHUB_OUTPUT
@@ -84,6 +91,10 @@ jobs:
           if [[ "${{ steps.has-pom.outputs.status }}" == "true" ]]; then
             mvn --batch-mode --non-recursive help:evaluate -Dexpression=project.version -Doutput=target/version.txt
             V=$(cat target/version.txt)
+            echo "version=${V%-SNAPSHOT}" >> $GITHUB_OUTPUT
+            cat $GITHUB_OUTPUT
+          elif [[ "${{ steps.is-gradle.outputs.status }}" == "true" ]]; then
+            V=$(./gradlew properties -q | grep "^version:" | awk '{print $2}')
             echo "version=${V%-SNAPSHOT}" >> $GITHUB_OUTPUT
             cat $GITHUB_OUTPUT
           elif [[ "${{ steps.is-vtag.outputs.status }}" == "true" ]]; then
