@@ -12,73 +12,96 @@ filter-by-commitish: true
 # Emoji reference: https://gitmoji.carloscuesta.me/
 categories:
   - title: 💥 Breaking changes
-    labels: 
-      - breaking
+    when:
+      labels: 
+        - breaking
 
   - title: 🚨 Removed
-    labels:
-      - removed
+    when:
+      labels: 
+        - removed
 
   - title: ⚠️ Deprecated
-    labels:
-      - deprecated
+    when:
+      labels: 
+        - deprecated
 
   - title: 🎉 Major features and improvements
-    labels:
-      - major-enhancement
-      - major-rfe
+    when:
+      labels: 
+        - major-enhancement
+        - major-rfe
 
   - title: 🐛 Major bug fixes
-    labels:
-      - major-bug
+    when:
+      labels: 
+        - major-bug
 
   - title: 🚀 New features and improvements
-    labels:
-      - enhancement
-      - feature
-      - rfe
+    when:
+      labels: 
+        - enhancement
+        - feature
+        - rfe
 
   - title: 🐛 Bug Fixes
-    labels:
-      - bug
-      - fix
-      - bugfix
-      - regression
+    when:
+      labels: 
+        - bug
+        - fix
+        - bugfix
+        - regression
 
   - title: 👷 Changes for developers
-    labels:
-      - developer
+    when:
+      labels: 
+        - developer
 
   - title: 📝 Documentation updates
-    labels:
-      - documentation
+    when:
+      labels: 
+        - documentation
 
   - title: 👻 Maintenance
-    labels: 
-      - chore
-      - internal
-      - maintenance
+    when:
+      labels: 
+        - chore
+        - internal
+        - maintenance
 
   - title: 🔧 Build
-    labels:
-      - build
-      - github_actions
+    when:
+      labels: 
+        - build
+        - github_actions
 
   - title: 🛡️ Security
-    labels:
-      - security
-      - vulnerability
+    when:
+      labels: 
+        - security
+        - vulnerability
 
   - title: 🚦 Tests
-    labels: 
-      - test
-      - tests
+    when:
+      labels: 
+        - test
+        - tests
 
   # Default label used by Dependabot
   - title: 📦 Dependency updates
-    labels:
-      - dependencies
+    when:
+      labels: 
+        - dependencies
     collapse-after: 15
+
+  # Label exclusions
+  - type: 'pre-exclude'
+    when:
+      labels:
+        - reverted
+        - no-changelog
+        - skip-changelog
+        - invalid
 
 sort-direction: 'ascending'
 
@@ -87,11 +110,12 @@ exclude-contributors:
   - 'dependabot[bot]'
   - 'GitHub Action'
 
-exclude-labels:
-  - reverted
-  - no-changelog
-  - skip-changelog
-  - invalid
+# exclude-labels deprecated since v7.4.0 => moved to categories
+#exclude-labels:
+#  - reverted
+#  - no-changelog
+#  - skip-changelog
+#  - invalid
 
 change-template: '- $TITLE ([#$NUMBER]($URL)) @$AUTHOR'
 
