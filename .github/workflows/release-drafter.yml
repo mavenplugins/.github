@@ -54,7 +54,7 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           persist-credentials: 'false'
 
@@ -78,7 +78,8 @@ jobs:
           echo "status=true" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - uses: actions/setup-java@v4
+      #- uses: actions/setup-java@v4
+      - uses: GHCICD/setup-java@vHEAD-GHCICD-main
         if: steps.has-pom.outputs.status == 'true'
         with:
           java-version: '21'
